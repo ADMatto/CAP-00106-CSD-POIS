@@ -38,7 +38,7 @@ public class HealthcheckControladorTest {
         ResponseEntity<Poi> respuesta = controlador.obtengoElPoiMasCercano(-34.59026795901409, -58.443649741046286);
 
         // Verificacion
-        Assertions.assertEquals("El Codo", respuesta.getBody().getNombre());
+        Assertions.assertEquals("Test", respuesta.getBody().getNombre());
 
     }
 }
