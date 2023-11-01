@@ -5,6 +5,7 @@ import ar.com.grupoesfera.csd.pois.modelos.Poi;
 import ar.com.grupoesfera.csd.pois.modelos.Pong;
 import org.junit.Ignore;
 import org.junit.jupiter.api.Assertions;
+import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.mockito.InjectMocks;
@@ -33,7 +34,7 @@ public class HealthcheckControladorTest {
         assertThat(cuerpo.getMensaje()).isEqualTo("pong");
     }
 
-    @Ignore("En desarrollo")
+    @Disabled("En Desarrollo")
     @Test
     public void poiMasCercano(){
         // Ejecucion
