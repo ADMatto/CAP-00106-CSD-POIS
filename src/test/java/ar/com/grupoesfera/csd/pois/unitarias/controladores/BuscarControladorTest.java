@@ -12,6 +12,13 @@ public class BuscarControladorTest {
     @InjectMocks
     private BuscarControlador controlador;
 
+    @Test
+    public void poiMasCercano(){
+        // Ejecucion
+        ResponseEntity<Poi> respuesta = controlador.obtengoElPoiMasCercano(-34.59031266097366, -58.44338422577147);
 
+        // Verificacion
+        Assertions.assertEquals("El Codo", respuesta.getBody().getNombre());
+    }
 
 }

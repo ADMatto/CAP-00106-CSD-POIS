@@ -1,9 +1,11 @@
 package ar.com.grupoesfera.csd.pois.aceptacion.pasos;
 
 import ar.com.grupoesfera.csd.pois.aceptacion.configuracion.ContextoCompartido;
+import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import net.javacrumbs.jsonunit.core.Option;
+import org.junit.jupiter.api.Assertions;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.test.web.servlet.MockMvc;
 import org.springframework.test.web.servlet.ResultActions;
@@ -24,6 +26,14 @@ public class PedidosHTTPPasos {
     public void elClienteHaceUnGETA(String ruta) throws Exception {
         ResultActions resultado = mockMvc.perform(get(ruta));
         this.contextoCompartido.agregarResultado(resultado);
+    }
+    @Given("dado que estoy ubicado en latitud {string} y longitud {string}")
+    public void ubicacionActual(String latitud, String longitud){
+
+    }
+    @Then("recibe la respuesta {string}")
+    public void recibeRespuestaPoi(String respuestaEsperada){
+        //Assertions.assertEquals(respuestaEsperada, respuesta.getBody().getNombre());
     }
 
     @Then("recibe la respuesta con codigo de estado {int} y contenido")
