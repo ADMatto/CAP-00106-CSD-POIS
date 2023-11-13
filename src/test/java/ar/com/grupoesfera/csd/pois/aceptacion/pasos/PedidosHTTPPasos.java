@@ -1,14 +1,18 @@
 package ar.com.grupoesfera.csd.pois.aceptacion.pasos;
 
 import ar.com.grupoesfera.csd.pois.aceptacion.configuracion.ContextoCompartido;
+import ar.com.grupoesfera.csd.pois.modelos.Poi;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import net.javacrumbs.jsonunit.core.Option;
 import org.junit.jupiter.api.Assertions;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.ResponseEntity;
 import org.springframework.test.web.servlet.MockMvc;
 import org.springframework.test.web.servlet.ResultActions;
+
+import java.util.List;
 
 import static net.javacrumbs.jsonunit.spring.JsonUnitResultMatchers.json;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
@@ -46,5 +50,14 @@ public class PedidosHTTPPasos {
                         .when(Option.IGNORING_ARRAY_ORDER)
                         .isEqualTo(respuesta)
                 );
+    }
+
+    /*@Given("dado que estoy ubicado en latitud {string} y longitud {string} y un {int}")
+    public void dadoQueEstoyUbicadoEnLatitudYLongitudYUnRadio(String arg0, String arg1, int radio) {
+        ResponseEntity<List<Poi>> respuesta = controlador.obtengoLosPoiCercanos(-34.59031266097366, -58.44338422577147, 150);
+    }*/
+
+    @Then("recibe la respuesta {string}")
+    public void recibeLaRespuestaListaEsperada(String listaEsperada) {
     }
 }

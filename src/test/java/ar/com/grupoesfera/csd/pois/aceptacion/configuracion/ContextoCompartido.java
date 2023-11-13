@@ -6,6 +6,8 @@ import org.springframework.test.web.servlet.ResultActions;
 @Component
 public class ContextoCompartido {
 
+    // private longitud
+
     private ResultActions resultado;
 
     public void agregarResultado(ResultActions resultado) {

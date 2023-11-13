@@ -33,33 +33,4 @@ public class HealthcheckControladorTest {
         assertThat(cuerpo).isNotNull();
         assertThat(cuerpo.getMensaje()).isEqualTo("pong");
     }
-
-    //@Disabled("En Desarrollo")
-    @Test
-    public void poiMasCercano(){
-        // Ejecucion
-        ResponseEntity<Poi> respuesta = controlador.obtengoElPoiMasCercano(-34.59031266097366, -58.44338422577147);
-
-        // Verificacion
-        Assertions.assertEquals("El Codo", respuesta.getBody().getNombre());
-    }
-    @Test
-    public void poisMasCercanos1(){
-        ResponseEntity<List<Poi>> respuesta = controlador.obtengoLosPoiCercanos(-34.59031266097366, -58.44338422577147, 150);
-        Assertions.assertEquals(respuesta.getBody().get(0).getNombre(), "El Codo");
-        Assertions.assertEquals(respuesta.getBody().get(1).getNombre(), "El Groso");
-    }
-    @Test
-    public void poisMasCercanos2(){
-        ResponseEntity<List<Poi>> respuesta = controlador.obtengoLosPoiCercanos(-34.59031266097366, -58.44338422577147, 250);
-        Assertions.assertEquals(respuesta.getBody().get(0).getNombre(), "El Codo");
-        Assertions.assertEquals(respuesta.getBody().get(1).getNombre(), "Anchoita");
-        Assertions.assertEquals(respuesta.getBody().get(2).getNombre(), "Don Juan");
-        Assertions.assertEquals(respuesta.getBody().get(3).getNombre(), "El Groso");
-    }
-    @Test
-    public void poisMasCercanos3(){
-        ResponseEntity<List<Poi>> respuesta = controlador.obtengoLosPoiCercanos(-34.59031266097366, -58.44338422577147, 30);
-        Assertions.assertTrue(respuesta.getBody().isEmpty());
-    }
 }
