@@ -56,8 +56,4 @@ public class PedidosHTTPPasos {
     public void dadoQueEstoyUbicadoEnLatitudYLongitudYUnRadio(String arg0, String arg1, int radio) {
         ResponseEntity<List<Poi>> respuesta = controlador.obtengoLosPoiCercanos(-34.59031266097366, -58.44338422577147, 150);
     }*/
-
-    @Then("recibe la respuesta {string}")
-    public void recibeLaRespuestaListaEsperada(String listaEsperada) {
-    }
 }
